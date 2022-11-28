@@ -9,12 +9,20 @@
       @include align-items(center);
       @include flex-direction(column);
 
+      @include maxResponsive(mediumPhone) {
+        padding: 74px 0;
+      }
+
       h2 {
         @include color(white-color);
         @include font($size: 55px, $weight: 800, $text: uppercase);
 
         @include maxResponsive(ipad) {
           @include font($size: 38px);
+        }
+
+        @include maxResponsive(mediumPhone) {
+          @include font($size: 27px);
         }
       }
     }
@@ -31,6 +39,11 @@
 
         @include maxResponsive(ipad) {
           padding: 9px 19px;
+        }
+
+        @include maxResponsive(mediumPhone) {
+          padding: 7px 15px;
+          @include font($size: 9px);
         }
       }
     }

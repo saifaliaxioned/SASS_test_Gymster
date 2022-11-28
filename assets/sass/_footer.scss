@@ -3,6 +3,10 @@ footer  {
   a {
     @include color(grey-color);
     @include font($size: 11px);
+    
+    @include maxResponsive(ipad) {
+      @include font($size: 10px);      
+    }
   }
 }
 
@@ -12,21 +16,50 @@ footer  {
   .wrapper {
     padding: 30px 0 24px;
     @include position($position: relative);
+
+    @include maxResponsive(tablet) {
+      @include display-flex();
+      @include flex-direction(column);
+    }
   }
 
   h5 {
     @include color(white-color);
     @include font($size: 18px, $weight: 700, $text: uppercase);
+
+    @include maxResponsive(ipad) {
+      @include font($size: 14px);
+    }
   }
 
   @at-root {
     .top-items {
       @extend %flex;
       gap: 40px;
+
+      @include maxResponsive(large-desktop) {
+        gap: 0;
+      }
+
+      @include maxResponsive(tablet) {
+        padding-bottom: 30px;
+        @include justify-content(center);
+        gap: 50px;
+      }
+
+
+      @include maxResponsive(largePhone) {
+        @include flex-wrap(wrap);
+        @include font($textAlign: center);
+      }
     }
 
     .top-list {
       @include flex-basis(20%);
+
+      @include maxResponsive(largePhone) {
+        @include flex-basis(100%);
+      }
     }
 
     .contact-items {
@@ -55,6 +88,10 @@ footer  {
           content: "\f3c5";
           @extend %left-icon;
           @include color(orange-color);
+        }
+
+        @include maxResponsive(largePhone) {
+          @include display(inline-block);
         }
       }
     }
@@ -130,6 +167,13 @@ footer  {
       @include color(white-color);
       @include font($textAlign: center);
 
+      @include maxResponsive(tablet) {
+        width: 70%;
+        min-width: 300px;
+        margin: 0 auto;
+        @include position($position: static);
+      }
+
       h6 {
         padding-bottom: 8px;
         @include font($size: 18px, $weight: 700, $text: uppercase);
@@ -204,12 +248,21 @@ footer  {
       @include color(white-color);
       @include font($weight: 600);
     }
+
+    @include maxResponsive(tablet) {
+      margin: 0;
+      @include font($textAlign: center)
+    }
   }
   @at-root {
 
     .scroll-top-btn {
       @include position($position: absolute, $bottom: 0, $right: 0);
       cursor: pointer;
+
+      @include maxResponsive(ipad) {
+        @include position($right: 5%);
+      }
 
       span {
         @include display(block);
