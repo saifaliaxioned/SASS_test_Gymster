@@ -49,6 +49,10 @@ header {
       @include justify-content(space-between);
       @include background(grey-color);
 
+      @include maxResponsive(ipad) {
+        @include position($position: absolute, $top: 72px, $right: 0);
+      }
+
     }
 
     .social-items {
@@ -78,6 +82,11 @@ header {
           @include font($size: 12px);
           text-indent: 0;
         }
+      }
+
+      @include maxResponsive(ipad) {
+        @include flex-direction(column);
+        @include position($position: absolute, $top: 50px, $right: 3%);
       }
     }
 
@@ -143,6 +152,11 @@ header {
       @include align-items(center);
       @include justify-content(space-between);
       @include background(black-background);
+
+      @include maxResponsive(ipad) {
+        @include justify-content(end);
+        gap: 10px;
+      }
     }
 
     nav {
@@ -194,9 +208,48 @@ header {
             @include color(orange-color);
           }
         }
+
+        @include maxResponsive(ipad) {
+          padding: 10px 23px;
+          @include font($size: 9px);
+        }
       }
     }
     /* header bottom end */
+
+    @include maxResponsive(ipad) {
+      .hamburger {
+        padding: 5px;
+        @include display(block);
+        @include position($zIndex: 3); 
+        @include order(2);
+      }
+    
+      nav {
+        width: 100%;
+        height: 100vh;
+        @include position($position: fixed, $zIndex: 1, $top: -100%, $left: 0);
+        @include background(black-color);
+        @include transition(all .5s ease);
+      }
+    
+      .hamburger:hover + nav {
+        @include position($top: 0);
+      }
+
+      .nav-items {
+        width: inherit;
+        height: inherit;
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content(center);
+        gap: 20px;
+
+        a {
+          @include font($size: 18px);
+        }
+      } 
+    }
   }
 }
 /* header end */ 

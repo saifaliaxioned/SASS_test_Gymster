@@ -12,6 +12,10 @@
       h2 {
         @include color(white-color);
         @include font($size: 55px, $weight: 800, $text: uppercase);
+
+        @include maxResponsive(ipad) {
+          @include font($size: 38px);
+        }
       }
     }
 
@@ -24,6 +28,10 @@
         border-radius: 2px;
         @include font($size: 11px, $weight: 600, $text:uppercase);
         @extend %transition;
+
+        @include maxResponsive(ipad) {
+          padding: 9px 19px;
+        }
       }
     }
 
