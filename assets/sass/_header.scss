@@ -6,6 +6,10 @@ header {
   }
 
   @at-root {
+    .logo {
+      @include flex-basis(25%);
+    }
+
     .header-content {
       @include flex-basis(75%);
     }
@@ -58,6 +62,14 @@ header {
         text-indent: -9999px;
         @include background(icon-background);
         @include color(black-color);
+        @extend %transition;
+
+        @include minResponsive(tablet) {
+          &:hover {
+            @include color(orange-color);
+            @include transform(scale(1.1));
+          }
+        }
 
         &::before {
           @extend %icon;
@@ -128,13 +140,61 @@ header {
       @extend %flex;
       @include align-items(center);
       @include justify-content(space-between);
+      @include background(black-background);
     }
 
     nav {
       @include flex-basis(80%);
     }
-    /* header bottom end */
 
+    .nav-items {
+      @extend %flex;
+      gap: 15px;
+
+      a {
+        padding: 12px 0 11px;
+        @include color(white-color);
+        @include font($size: 11px, $weight: 600, $text:uppercase);
+        @extend %transition;
+        
+        @include minResponsive(tablet) {
+          &:hover {
+            @include color(orange-color);
+          }
+        }
+      }
+    }
+
+    .active-nav {
+      a {
+        @include color(orange-color);
+      }
+    }
+
+    .down-arrow::before {
+      content: "\f0dd";
+      margin-left: 4px;
+      @include icon($float: right);
+    }
+
+    .header-btn {
+      a {
+        padding: 12px 30px;
+        border-radius: 2px;
+        @include background(orange-color);
+        @include color(white-color);
+        @include font($size: 11px, $weight: 600, $text:uppercase);
+        @extend %transition;
+
+        @include minResponsive(tablet) {
+          &:hover {
+            @include background(white-color);
+            @include color(orange-color);
+          }
+        }
+      }
+    }
+    /* header bottom end */
   }
 }
 /* header end */ 
