@@ -208,13 +208,13 @@ li {
   margin: 0 auto;
 }
 
-.nav-items, .header-bottom, .social-items, .header-top, .header-contact, header .wrapper {
+.banner-btns, .banner-content, .nav-items, .header-bottom, .social-items, .header-top, .header-contact, header .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.header-btn a, .nav-items a, .bar::before,
+.banner-btns a, .header-btn a, .nav-items a, .bar::before,
 .bar::after, .bar, .social-items a {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -459,5 +459,61 @@ nav {
 /* header bottom end */
 
 /* header end */
+/* banner section start */
+.banner {
+  background: linear-gradient(180deg, rgba(31, 32, 36, 0.78), rgba(31, 32, 36, 0.78)), url("../images/carousel-1.jpg") no-repeat top center;
+  background-size: cover;
+}
+.banner-content {
+  padding: 66px 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.banner-content h2 {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.banner-btns {
+  gap: 13px;
+}
+.banner-btns a {
+  padding: 12px 30px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.orange-btn {
+  background: #FB5B21;
+  color: #fff;
+}
+@media only screen and (min-width: 995px) {
+  .orange-btn:hover {
+    background: #fff;
+    color: #FB5B21;
+  }
+}
+
+.white-btn {
+  background: #fff;
+  color: #000;
+}
+@media only screen and (min-width: 995px) {
+  .white-btn:hover {
+    background: #FB5B21;
+    color: #fff;
+  }
+}
+
+/* banner section end */
 
 /*# sourceMappingURL=style.css.map */

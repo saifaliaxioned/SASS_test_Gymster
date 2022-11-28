@@ -1,0 +1,55 @@
+/* banner section start */ 
+.banner {
+  background: linear-gradient(180deg,rgba(31,32,36, 0.78),rgba(31,32,36, 0.78)) ,url('../images/carousel-1.jpg') no-repeat top center;
+  background-size: cover;
+  @at-root {
+    .banner-content {
+      padding: 66px 0;
+      @extend %flex;
+      @include align-items(center);
+      @include flex-direction(column);
+
+      h2 {
+        @include color(white-color);
+        @include font($size: 55px, $weight: 800, $text: uppercase);
+      }
+    }
+
+    .banner-btns {
+      @extend %flex;
+      gap: 13px;
+
+      a {
+        padding: 12px 30px;
+        border-radius: 2px;
+        @include font($size: 11px, $weight: 600, $text:uppercase);
+        @extend %transition;
+      }
+    }
+
+    .orange-btn {
+      @include background(orange-color);
+      @include color(white-color);
+
+      @include minResponsive(tablet) {
+        &:hover {
+          @include background(white-color);
+          @include color(orange-color);
+        }
+      }
+    }
+
+    .white-btn {
+      @include background(white-color);
+      @include color(black-color);
+
+      @include minResponsive(tablet) {
+        &:hover {
+          @include background(orange-color);
+          @include color(white-color);
+        }
+      }
+    }
+  }
+}
+/* banner section end */ 
