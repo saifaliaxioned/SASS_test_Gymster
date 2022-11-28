@@ -208,7 +208,199 @@ li {
   margin: 0 auto;
 }
 
+.header-bottom, .social-items, .header-top, .header-contact, header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bar::before,
+.bar::after, .bar {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.bar, .header-contact a::before, .social-items a::before {
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.social-items a::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: "FontAwesome";
+}
+
+.header-contact a::before {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  font-family: "FontAwesome";
+}
+
 /* header start */
+header .wrapper {
+  width: 100%;
+}
+.header-content {
+  -ms-flex-preferred-size: 75%;
+  flex-basis: 75%;
+}
+
+/* header top start */
+.header-contact {
+  gap: 10px;
+}
+.header-contact a {
+  padding: 0 10px;
+  position: relative;
+  color: #000;
+  font-size: 11px;
+  font-weight: 600;
+}
+.header-contact a::before {
+  color: #FB5B21;
+}
+
+.header-mail::before {
+  content: "\f0e0";
+}
+
+.call-icon::before {
+  content: "\f095";
+}
+
+.header-top {
+  padding: 6px 3.3%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #BDBDBF;
+}
+
+.social-items {
+  gap: 5px;
+}
+.social-items a {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  text-indent: -9999px;
+  background: #F4F5F8;
+  color: #000;
+}
+.social-items a::before {
+  font-size: 12px;
+  text-indent: 0;
+}
+
+.facebook::before {
+  content: "\f39e";
+}
+
+.twitter::before {
+  content: "\f099";
+}
+
+.linkedin::before {
+  content: "\f0e1";
+}
+
+.instagram::before {
+  content: "\f16d";
+}
+
+.youtube::before {
+  content: "\f167";
+}
+
+/* header top end */
+/* header bottom start */
+/* hamburger start */
+.hamburger {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  position: relative;
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 50%;
+  height: 2px;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  background: #fff;
+  text-indent: -99999px;
+}
+
+.bar::before,
+.bar::after {
+  content: "";
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  left: 0;
+  background-color: inherit;
+}
+
+.bar::before {
+  top: -6px;
+}
+
+.bar::after {
+  top: 6px;
+}
+
+.hamburger:hover .bar {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hamburger:hover .bar::before {
+  -webkit-transform: translateY(6px) rotate(0);
+  -ms-transform: translateY(6px) rotate(0);
+  transform: translateY(6px) rotate(0);
+}
+
+.hamburger:hover .bar::after {
+  -webkit-transform: translateY(-6px) rotate(-90deg);
+  -ms-transform: translateY(-6px) rotate(-90deg);
+  transform: translateY(-6px) rotate(-90deg);
+}
+
+/* hamburger end */
+.header-bottom {
+  padding: 15px 3.3%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+nav {
+  -ms-flex-preferred-size: 80%;
+  flex-basis: 80%;
+}
+
+/* header bottom end */
+
 /* header end */
 
 /*# sourceMappingURL=style.css.map */
