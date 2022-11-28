@@ -214,7 +214,7 @@ li {
   display: flex;
 }
 
-.banner-btns a, .header-btn a, .nav-items a, .bar::before,
+.trainer-items img, .banner-btns a, .header-btn a, .nav-items a, .bar::before,
 .bar::after, .bar, .social-items a {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -536,7 +536,7 @@ nav {
 }
 
 .trainer-items {
-  padding: 30px 0;
+  padding: 27px 0;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 34px;
@@ -545,6 +545,38 @@ nav {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 31.2%;
   flex: 1 0 31.2%;
+  overflow: hidden;
+}
+@media only screen and (min-width: 995px) {
+  .trainer-items li:hover img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.trainer-items figure {
+  position: relative;
+}
+.trainer-items figcaption {
+  width: 100%;
+  padding: 24px 0 13px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(31, 32, 37, 0.9);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+.trainer-items h4 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 0.8;
+}
+.trainer-items span {
+  color: #BDBDBF;
+  font-size: 11px;
+  font-weight: 500;
 }
 
 /* trainers section end */

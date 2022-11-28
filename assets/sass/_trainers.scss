@@ -18,17 +18,51 @@
       }
     }
 
-      .trainer-items {
-        padding: 30px 0;
-        @extend %flex;
-        @include flex-wrap(wrap);
-        gap: 34px;
+    .trainer-items {
+      padding: 27px 0;
+      @extend %flex;
+      @include flex-wrap(wrap);
+      gap: 34px;
 
-        li {
-          @include flex(1, 0, 31.2%);
-        }
+      img {
+        @extend %transition;
       }
-    
+
+      li {
+        @include flex(1, 0, 31.2%);
+        overflow: hidden;
+
+        @include minResponsive(tablet) {
+          &:hover img{
+            @include transform(scale(1.1));
+          }
+        }
+
+      }
+
+      figure {
+        @include position($position: relative);
+      }
+      
+      figcaption {
+        width: 100%;
+        padding: 24px 0 13px;
+        @include position($position: absolute, $bottom: 0, $left: 0);
+        @include background(image-caption);
+        @include color(white-color);
+        @include font($textAlign: center, $text: uppercase);
+      }
+      
+      h4 {
+        @include font($size: 15px, $weight: 600);
+        line-height: .8;
+      }
+      
+      span {
+        @include color(grey-color);
+        @include font($size: 11px, $weight: 500);
+      }
+    }
   }
 }
 /* trainers section end */ 
