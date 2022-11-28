@@ -214,20 +214,20 @@ form, .top-items, .trainer-items, .banner-btns, .banner-content, .nav-items, .he
   display: flex;
 }
 
-.footer-social a, .trainer-items img, .banner-btns a, .header-btn a, .nav-items a, .bar::before,
+.input-control input, .footer-social a, .trainer-items img, .banner-btns a, .header-btn a, .nav-items a, .bar::before,
 .bar::after, .bar, .social-items a {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.bar, .quick-items a::before, .popular-items a::before, .contact-items p::before, .contact-items a::before, .header-contact a::before, .footer-social a::before, .social-items a::before {
+.bar, .quick-items a::before, .popular-items a::before, .contact-items p::before, .contact-items a::before, .header-contact a::before, .scroll-top-btn span::before, .footer-social a::before, .social-items a::before {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
-.footer-social a::before, .social-items a::before {
+.scroll-top-btn span::before, .footer-social a::before, .social-items a::before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -251,8 +251,12 @@ form, .top-items, .trainer-items, .banner-btns, .banner-content, .nav-items, .he
 /* header start */
 header .wrapper {
   width: 100%;
+  background: #CCCCCC;
 }
 .logo {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   -ms-flex-preferred-size: 25%;
   flex-basis: 25%;
 }
@@ -554,6 +558,7 @@ nav {
   -ms-flex: 1 0 31.2%;
   flex: 1 0 31.2%;
   overflow: hidden;
+  cursor: pointer;
 }
 @media only screen and (min-width: 995px) {
   .trainer-items li:hover img {
@@ -591,14 +596,14 @@ nav {
 /* footer start */
 footer a {
   color: #BDBDBF;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .footer-top {
   background: #222329;
 }
 .footer-top .wrapper {
-  padding: 30px 0;
+  padding: 30px 0 24px;
   position: relative;
 }
 .footer-top h5 {
@@ -607,13 +612,17 @@ footer a {
   font-weight: 700;
   text-transform: uppercase;
 }
+.top-items {
+  gap: 40px;
+}
+
 .top-list {
   -ms-flex-preferred-size: 20%;
   flex-basis: 20%;
 }
 
 .contact-items {
-  padding: 15px 0;
+  padding: 15px 0 10px;
   margin-left: 3%;
   font-size: 11px;
   gap: 7px;
@@ -636,9 +645,13 @@ footer a {
 }
 
 .quick-items, .popular-items {
-  padding: 12px 0;
+  padding: 10px 0;
   margin-left: 3%;
+  font-weight: 500;
   text-transform: capitalize;
+}
+.quick-items li, .popular-items li {
+  line-height: 1.4;
 }
 .quick-items a, .popular-items a {
   padding: 0 10px;
@@ -648,6 +661,12 @@ footer a {
 .quick-items a::before, .popular-items a::before {
   content: "\f061";
   color: #FB5B21;
+}
+@media only screen and (min-width: 995px) {
+  .quick-items a:hover, .popular-items a:hover {
+    color: #FB5B21;
+    text-decoration: underline;
+  }
 }
 
 .footer-social a {
@@ -687,11 +706,11 @@ footer a {
 }
 
 .instagram::before {
-  content: "\e055";
+  content: "\f16d";
 }
 
 .newsletter {
-  padding: 36px 58px;
+  padding: 54px 58px 16px;
   position: absolute;
   top: 0;
   right: 0;
@@ -705,25 +724,92 @@ footer a {
   font-weight: 700;
   text-transform: uppercase;
 }
-.newsletter span {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
 .newsletter p {
   font-size: 10px;
   font-weight: 500;
 }
 .newsletter input {
-  padding: 13px;
+  padding: 15px 10px;
   border: none;
   outline: none;
 }
+.subscribe-para {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.company-name {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+form {
+  padding: 10px 0 65px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .input-group input {
-  border-radius: 8px 0 0 8px;
+  border-radius: 3px 0 0 3px;
   font-size: 10px;
 }
 
+.input-control input {
+  border-radius: 0 3px 3px 0;
+  background: #222329;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 995px) {
+  .input-control input:hover {
+    background: #BDBDBF;
+    color: #FB5B21;
+  }
+}
+
+/* footer bottom start */
+.footer-bottom {
+  padding: 18px 0;
+  background: #111111;
+}
+.footer-bottom .wrapper {
+  position: relative;
+}
+.footer-bottom p {
+  margin-left: 25%;
+  color: #BDBDBF;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+.footer-bottom p span {
+  color: #fff;
+  font-weight: 600;
+}
+.scroll-top-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+.scroll-top-btn span {
+  display: block;
+  position: relative;
+  text-indent: -9999px;
+}
+.scroll-top-btn span::before {
+  content: "\f062";
+  padding: 18px 12px;
+  margin-top: 4px;
+  background: rgba(32, 30, 30, 0.3);
+  color: #BDBDBF;
+  text-indent: 0;
+}
+
+/* footer bottom end */
 /* footer end */
 
 /*# sourceMappingURL=style.css.map */

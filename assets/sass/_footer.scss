@@ -2,7 +2,7 @@
 footer  {
   a {
     @include color(grey-color);
-    @include font($size: 12px);
+    @include font($size: 11px);
   }
 }
 
@@ -10,7 +10,7 @@ footer  {
   @include background(black-background);
   
   .wrapper {
-    padding: 30px 0;
+    padding: 30px 0 24px;
     @include position($position: relative);
   }
 
@@ -22,7 +22,7 @@ footer  {
   @at-root {
     .top-items {
       @extend %flex;
-      // gap: 40px;
+      gap: 40px;
     }
 
     .top-list {
@@ -30,7 +30,7 @@ footer  {
     }
 
     .contact-items {
-      padding: 15px 0;
+      padding: 15px 0 10px;
       margin-left: 3%;
       @extend %flex-column;
       @include font($size: 11px);
@@ -60,10 +60,14 @@ footer  {
     }
 
     .quick-items {
-      padding: 12px 0;
+      padding: 10px 0;
       margin-left: 3%;
       @extend %flex-column;
-      @include font($text: capitalize);
+      @include font($weight: 500, $text: capitalize);
+
+      li {
+        line-height: 1.4;
+      }
 
       a {
         padding: 0 10px;
@@ -74,6 +78,13 @@ footer  {
           content: "\f061";
           @extend %left-icon;
           @include color(orange-color);
+        }
+        
+        @include minResponsive(tablet) {
+          &:hover {
+            @include color(orange-color);
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -113,7 +124,7 @@ footer  {
     @include onlyIcon($footerIcon);
 
     .newsletter {
-      padding: 36px 58px;
+      padding: 54px 58px 16px;
       @include position($position: absolute, $top: 0, $right: 0);
       @include background(orange-color);
       @include color(white-color);
@@ -124,32 +135,99 @@ footer  {
         @include font($size: 18px, $weight: 700, $text: uppercase);
       }
       
-      span {
-        @include font($size: 12px, $weight: 700, $text: uppercase);
-      }
-      
       p {
         @include font($size: 10px, $weight: 500);        
       }
 
       input {
-        padding: 13px;
+        padding: 15px 10px;
         border: none;
         outline: none;
       }
 
       @at-root {
+        .subscribe-para {
+          @include font($size: 12px, $weight: 700, $text: uppercase);
+        }
+
+        .company-name {
+          @include font($size: 11px, $weight: 500);
+        }
+
         form {
-          @extend %flex;
+          padding: 10px 0 65px;
+          @extend %flex;      
+          @include justify-content(center);
         }
 
         .input-group input {
-          border-radius: 8px 0 0 8px;
-          @include font($size: 10px)
+          border-radius: 3px 0 0 3px;
+          @include font($size: 10px);
         }
-        
+
+        .input-control {
+          input {
+            border-radius: 0 3px 3px 0;
+            @include background(black-background);
+            @include color(white-color);
+            @include font($size: 10px, $weight: 600, $text: uppercase);
+            @extend %transition;
+
+            @include minResponsive(tablet) {
+              &:hover {
+                @include background(grey-color);
+                @include color(orange-color);
+              }
+            }
+          }
+        }  
       }
     }
   }
 }
+
+/* footer bottom start */ 
+.footer-bottom {
+  padding: 18px 0;
+  @include background(bottom-background);
+
+  .wrapper {
+    @include position($position: relative);
+  }
+
+  p {
+    margin-left: 25%;
+    @include color(grey-color);
+    @include font($size: 10px, $text: capitalize);
+    
+    span {
+      @include color(white-color);
+      @include font($weight: 600);
+    }
+  }
+  @at-root {
+
+    .scroll-top-btn {
+      @include position($position: absolute, $bottom: 0, $right: 0);
+      cursor: pointer;
+
+      span {
+        @include display(block);
+        @include position($position: relative);
+        text-indent: -9999px;
+
+        &::before {
+          content: "\f062";
+          padding: 18px 12px;
+          margin-top: 4px;
+          @extend %icon;
+          @include background(scroll-icon);
+          @include color(grey-color);
+          text-indent: 0;
+        }
+      }
+    }
+  }
+}
+/* footer bottom end */ 
 /* footer end */ 

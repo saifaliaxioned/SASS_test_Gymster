@@ -3,10 +3,12 @@ header {
   .wrapper {
     width: 100%;
     @extend %flex;
+    @include background(light-grey);
   }
-
+  
   @at-root {
     .logo {
+      @include align-self(center);
       @include flex-basis(25%);
     }
 

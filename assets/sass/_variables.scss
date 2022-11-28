@@ -1,9 +1,9 @@
-$colors : (white-color: #fff, black-color: #000, orange-color: #FB5B21, grey-color: #BDBDBF, image-caption: rgba(31, 32, 37,.9), black-background: #222329, bottom-background: #111111, icon-background: #F4F5F8);
+$colors : (white-color: #fff, black-color: #000, orange-color: #FB5B21, grey-color: #BDBDBF, image-caption: rgba(31, 32, 37,.9), black-background: #222329, bottom-background: #111111, icon-background: #F4F5F8, scroll-icon: rgba(32, 30, 30, 0.3), light-grey: #CCCCCC);
 
 $devices:(large-desktop: "1280px", desktop: "1024px", tablet: "995px", ipad: "768px", largePhone: "640px", mediumPhone: "480px", smallPhone: "320px");
 
 $headerIcon:(facebook: "\f39e", twitter: "\f099", linkedin: "\f0e1", instagram: "\f16d", youtube: "\f167");
 
-$footerIcon : (twitter: "\f099", facebook: "\f39e", linkedin: "\f0e1", instagram: "\e055");
+$footerIcon : (twitter: "\f099", facebook: "\f39e", linkedin: "\f0e1", instagram: "\f16d");
 
 $autoMargin : 0 auto;
