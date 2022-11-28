@@ -1,9 +1,9 @@
-$colors : (white-color:#fff, black-color:#000, primary-color: #4E9525, secondary-color: #FBD342, light-green: #65A341, blog-green: #4F9526, btn-green: #396C1B, grey-text: #A29A97, content-grey: #F2F2F2, background-grey: #F8F9FA);
+$colors : (white-color: #fff, black-color: #000, orange-color: #FB5B21, grey-color: #BDBDBF, image-caption: #1F2025, top-background: #222329, bottom-background: #111111);
 
-$devices:(large-desktop:"1280px", desktop:"1024px", tablet:"995px", ipad:"768px", largePhone:"640px", mediumPhone:"480px", smallPhone:"320px");
+$devices:(large-desktop: "1280px", desktop: "1024px", tablet: "995px", ipad: "768px", largePhone: "640px", mediumPhone: "480px", smallPhone: "320px");
 
-$headerIcon:(facebook:"\f39e", ball:"\f434", twitter:"\f099", instagram:"\f16d");
+$headerIcon:(facebook: "\f39e", twitter: "\f099", linkedin: "\f0e1", instagram: "\f16d", youtube: "\f167");
 
-$footerIcon : (twitter:"\f099", facebook:"\f39e", instagram:"\e055");
+$footerIcon : (twitter: "\f099", facebook: "\f39e", linkedin: "\f0e1", instagram: "\e055");
 
 $autoMargin : 0 auto;
