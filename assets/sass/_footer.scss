@@ -1,0 +1,155 @@
+/* footer start */ 
+footer  {
+  a {
+    @include color(grey-color);
+    @include font($size: 12px);
+  }
+}
+
+.footer-top {
+  @include background(black-background);
+  
+  .wrapper {
+    padding: 30px 0;
+    @include position($position: relative);
+  }
+
+  h5 {
+    @include color(white-color);
+    @include font($size: 18px, $weight: 700, $text: uppercase);
+  }
+
+  @at-root {
+    .top-items {
+      @extend %flex;
+      // gap: 40px;
+    }
+
+    .top-list {
+      @include flex-basis(20%);
+    }
+
+    .contact-items {
+      padding: 15px 0;
+      margin-left: 3%;
+      @extend %flex-column;
+      @include font($size: 11px);
+      gap: 7px;
+
+      a {
+        padding: 0 10px;
+        @include position($position: relative);
+
+        &::before {
+          @extend %left-icon;
+          @include color(orange-color);
+        }
+      }
+
+      p {
+        padding: 0 10px;
+        @include position($position: relative);
+        @include color(grey-color);
+        
+        &::before {
+          content: "\f3c5";
+          @extend %left-icon;
+          @include color(orange-color);
+        }
+      }
+    }
+
+    .quick-items {
+      padding: 12px 0;
+      margin-left: 3%;
+      @extend %flex-column;
+      @include font($text: capitalize);
+
+      a {
+        padding: 0 10px;
+        @include position($position: relative);
+        @include color(grey-color);
+        
+        &::before {
+          content: "\f061";
+          @extend %left-icon;
+          @include color(orange-color);
+        }
+      }
+    }
+    
+    .popular-items {
+      @extend .quick-items;
+    }
+
+    .footer-social {
+
+      a {
+        width: 27px;
+        height: 27px;;
+        border-radius: 50%;
+        @include display(block);
+        @include position($position: relative);
+        text-indent: -9999px;
+        @include background(orange-color);
+        @include color(white-color);
+        @extend %transition;
+        
+        @include minResponsive(tablet) {
+          &:hover {
+            @include background(white-color);
+            @include color(orange-color);
+            @include transform(scale(1.1));
+          }
+        }
+
+        &::before {
+          @extend %icon;
+          @include font($size: 12px);
+          text-indent: 0;
+        }
+      }
+    }
+    @include onlyIcon($footerIcon);
+
+    .newsletter {
+      padding: 36px 58px;
+      @include position($position: absolute, $top: 0, $right: 0);
+      @include background(orange-color);
+      @include color(white-color);
+      @include font($textAlign: center);
+
+      h6 {
+        padding-bottom: 8px;
+        @include font($size: 18px, $weight: 700, $text: uppercase);
+      }
+      
+      span {
+        @include font($size: 12px, $weight: 700, $text: uppercase);
+      }
+      
+      p {
+        @include font($size: 10px, $weight: 500);        
+      }
+
+      input {
+        padding: 13px;
+        border: none;
+        outline: none;
+      }
+
+      @at-root {
+        form {
+          @extend %flex;
+        }
+
+        .input-group input {
+          border-radius: 8px 0 0 8px;
+          @include font($size: 10px)
+        }
+        
+      }
+    }
+  }
+}
+/* footer end */ 

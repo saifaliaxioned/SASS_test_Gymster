@@ -24,3 +24,8 @@
   @include icon($position: absolute, $top: 45%, $left: 0);
   @extend %transform-center;
 }
+
+%flex-column {
+  @extend %flex;
+  @include flex-direction(column);
+}

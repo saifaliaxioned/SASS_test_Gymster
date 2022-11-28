@@ -208,37 +208,44 @@ li {
   margin: 0 auto;
 }
 
-.trainer-items, .banner-btns, .banner-content, .nav-items, .header-bottom, .social-items, .header-top, .header-contact, header .wrapper {
+form, .top-items, .trainer-items, .banner-btns, .banner-content, .nav-items, .header-bottom, .social-items, .header-top, .header-contact, header .wrapper, .quick-items, .popular-items, .contact-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.trainer-items img, .banner-btns a, .header-btn a, .nav-items a, .bar::before,
+.footer-social a, .trainer-items img, .banner-btns a, .header-btn a, .nav-items a, .bar::before,
 .bar::after, .bar, .social-items a {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.bar, .header-contact a::before, .social-items a::before {
+.bar, .quick-items a::before, .popular-items a::before, .contact-items p::before, .contact-items a::before, .header-contact a::before, .footer-social a::before, .social-items a::before {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
-.social-items a::before {
+.footer-social a::before, .social-items a::before {
   position: absolute;
   top: 50%;
   left: 50%;
   font-family: "FontAwesome";
 }
 
-.header-contact a::before {
+.quick-items a::before, .popular-items a::before, .contact-items p::before, .contact-items a::before, .header-contact a::before {
   position: absolute;
   top: 45%;
   left: 0;
   font-family: "FontAwesome";
+}
+
+.quick-items, .popular-items, .contact-items {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 /* header start */
@@ -517,7 +524,7 @@ nav {
 /* banner section end */
 /* trainers section start */
 .trainers {
-  padding: 64px 0;
+  padding: 64px 0 40px;
 }
 .section-heading {
   text-align: center;
@@ -542,6 +549,7 @@ nav {
   gap: 34px;
 }
 .trainer-items li {
+  border-radius: 3px;
   -webkit-box-flex: 1;
   -ms-flex: 1 0 31.2%;
   flex: 1 0 31.2%;
@@ -580,5 +588,142 @@ nav {
 }
 
 /* trainers section end */
+/* footer start */
+footer a {
+  color: #BDBDBF;
+  font-size: 12px;
+}
+
+.footer-top {
+  background: #222329;
+}
+.footer-top .wrapper {
+  padding: 30px 0;
+  position: relative;
+}
+.footer-top h5 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.top-list {
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+}
+
+.contact-items {
+  padding: 15px 0;
+  margin-left: 3%;
+  font-size: 11px;
+  gap: 7px;
+}
+.contact-items a {
+  padding: 0 10px;
+  position: relative;
+}
+.contact-items a::before {
+  color: #FB5B21;
+}
+.contact-items p {
+  padding: 0 10px;
+  position: relative;
+  color: #BDBDBF;
+}
+.contact-items p::before {
+  content: "\f3c5";
+  color: #FB5B21;
+}
+
+.quick-items, .popular-items {
+  padding: 12px 0;
+  margin-left: 3%;
+  text-transform: capitalize;
+}
+.quick-items a, .popular-items a {
+  padding: 0 10px;
+  position: relative;
+  color: #BDBDBF;
+}
+.quick-items a::before, .popular-items a::before {
+  content: "\f061";
+  color: #FB5B21;
+}
+
+.footer-social a {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  text-indent: -9999px;
+  background: #FB5B21;
+  color: #fff;
+}
+@media only screen and (min-width: 995px) {
+  .footer-social a:hover {
+    background: #fff;
+    color: #FB5B21;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.footer-social a::before {
+  font-size: 12px;
+  text-indent: 0;
+}
+
+.twitter::before {
+  content: "\f099";
+}
+
+.facebook::before {
+  content: "\f39e";
+}
+
+.linkedin::before {
+  content: "\f0e1";
+}
+
+.instagram::before {
+  content: "\e055";
+}
+
+.newsletter {
+  padding: 36px 58px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #FB5B21;
+  color: #fff;
+  text-align: center;
+}
+.newsletter h6 {
+  padding-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.newsletter span {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.newsletter p {
+  font-size: 10px;
+  font-weight: 500;
+}
+.newsletter input {
+  padding: 13px;
+  border: none;
+  outline: none;
+}
+.input-group input {
+  border-radius: 8px 0 0 8px;
+  font-size: 10px;
+}
+
+/* footer end */
 
 /*# sourceMappingURL=style.css.map */

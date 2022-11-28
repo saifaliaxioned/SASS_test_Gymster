@@ -1,6 +1,6 @@
 /* trainers section start */ 
 .trainers {
-  padding: 64px 0;
+  padding: 64px 0 40px;
   
   @at-root {
     .section-heading {
@@ -29,6 +29,7 @@
       }
 
       li {
+        border-radius: 3px;
         @include flex(1, 0, 31.2%);
         overflow: hidden;
 

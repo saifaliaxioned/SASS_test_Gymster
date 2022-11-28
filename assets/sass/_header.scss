@@ -23,7 +23,7 @@ header {
         padding: 0 10px;
         @include position($position: relative);
         @include color(black-color);
-        @include font($size: 11px, $weight: 600,);
+        @include font($size: 11px, $weight: 600);
 
         &::before {
           @extend %left-icon;
